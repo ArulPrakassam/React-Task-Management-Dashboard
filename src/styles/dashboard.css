@@ -1,0 +1,263 @@
+/* dashboard */
+
+.container {
+  margin: 20px auto;
+  padding: 20px;
+  width: 80vw;
+}
+.user-greetings {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 15px;
+  margin-bottom: 30px;
+}
+.greetings-text h1 {
+  font-size: 2rem;
+  font-family: var(--primary-font);
+  text-transform: capitalize;
+}
+
+/* task container */
+
+.tasks-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 40px;
+  transition: all 0.5s linear;
+}
+.task-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--light-color-four);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  min-height: 250px;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.task-item:hover {
+  transform: scale(1.05);
+}
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.priority {
+  display: flex;
+  justify-content: flex-start;
+}
+.status-btn button {
+  border: none;
+  border-radius: 8px;
+  padding: 5px 15px;
+  font-size: 0.88rem;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-icon,
+.delete-icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.edit-icon {
+  margin-right: 10px;
+  color: var(--secondary-color);
+}
+.delete-icon {
+  color: red;
+}
+.task-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.task-body h1 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-family: var(--primary-font);
+}
+.task-body p {
+  font-size: 0.89rem;
+  color: var(--dark-color-two);
+  margin: 10px 0;
+  font-family: var(--secondary-font);
+}
+
+.task-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--primary-font);
+  font-size: 1rem;
+  width: 100%;
+}
+
+.due-date {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--dark-color-two);
+  margin-top: 10px;
+}
+.due-date p {
+  margin-left: 10px;
+  color: var(--secondary-color);
+}
+.task-footer button {
+  margin-top: 10px;
+}
+
+/* task alert */
+
+.no-tasks-alert p {
+  font-size: var(--secondary-font);
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1330px) {
+  .tasks-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 886px) {
+  .task-item {
+    width: 300px;
+  }
+  .task-body h1 {
+    font-size: 1.1rem;
+  }
+  .task-body p {
+    font-size: 0.8rem;
+  }
+  .task-footer {
+    font-size: 0.88rem;
+  }
+}
+
+@media screen and (max-width: 762px) {
+  .greetings-text h1 {
+    font-size: 1.8rem;
+  }
+  .task-item {
+    width: 300px;
+  }
+  .container {
+    width: 90vw;
+  }
+  .task-body h1 {
+    font-size: 1.1rem;
+  }
+  .status-btn button {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 726px) {
+  .greetings-text h1 {
+    font-size: 1.75rem;
+  }
+  .user-greetings {
+    margin-left: 30px;
+  }
+  .tasks-container {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    width: 100vw;
+  }
+
+  .task-item {
+    width: 450px;
+    min-height: 300px;
+  }
+  .task-body h1 {
+    font-size: 1.5rem;
+  }
+  .task-body p {
+    font-size: 0.9rem;
+  }
+  .task-footer {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 503px) {
+  .task-item {
+    width: 90vw;
+  }
+  .user-greetings {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .task-item {
+    width: 90vw;
+  }
+  .task-body h1 {
+    font-size: 1.3rem;
+  }
+  .task-body p {
+    font-size: 0.85rem;
+  }
+  .due-date {
+    font-size: 0.88rem;
+  }
+  .greetings-text h1 {
+    font-size: 1.55rem;
+  }
+
+  .status-btn button {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .greetings-text h1 {
+    font-size: 1.25rem;
+  }
+  .profile-options li {
+    font-size: 0.8rem;
+  }
+  .profile-box {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 229px) {
+  .task-item {
+    width: 100vw;
+  }
+  .task-body h1 {
+    font-size: 1.2rem;
+  }
+  .task-body p {
+    font-size: 0.8rem;
+  }
+  .due-date {
+    font-size: 0.83rem;
+  }
+}

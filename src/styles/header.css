@@ -1,0 +1,117 @@
+/* nav bar */
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 30px;
+  padding: 0 20px;
+}
+.nav-title h1 {
+  font-size: 2rem;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+.nav-right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.nav-icon {
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.notifications-icon {
+  color: var(--light-color-one);
+}
+.user-profile-icon {
+  color: var(--secondary-color);
+}
+
+/* profile box */
+.profile-box {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 150px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.profile-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.profile-options li {
+  font-size: 0.95rem;
+  font-family: var(--secondary-font);
+  padding: 10px;
+  color: var(--secondary-color);
+  background-color: var(--light-color-two);
+  width: 100%;
+  cursor: pointer;
+}
+.profile-options li:hover {
+  color: var(--primary-color);
+  font-weight: 700;
+  background-color: var(--background-secondary);
+}
+
+@media screen and (max-width: 762px) {
+  .nav-title h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 726px) {
+  .nav-title h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 503px) {
+  .nav-header {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .nav-icon {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .nav-title h1 {
+    font-size: 1.55rem;
+  }
+  .nav-header {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .nav-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .nav-header {
+    padding: 0;
+  }
+
+  .nav-title h1 {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 229px) {
+  .nav-icon {
+    font-size: 1.2rem;
+  }
+}

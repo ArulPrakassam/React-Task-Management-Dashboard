@@ -1,0 +1,233 @@
+/*task form */
+
+.modal-content {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  transition: all 0.4s linear;
+}
+.modal-container {
+  width: 400px;
+  background: var(--light-color-four);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.title-input,
+.description-input,
+.task-due-date {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: baseline;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-family: var(--primary-font);
+  color: var(--dark-color-one);
+}
+
+.title-input input,
+.description-input textarea,
+.task-due-date input {
+  font-size: 1rem;
+  border-radius: 8px;
+  background: var(--light-color-two);
+  color: var(--primary-color);
+  font-family: var(--primary-font);
+  border: 0.5px solid var(--secondary-color);
+  width: 250px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title-input input::placeholder,
+.description-input textarea::placeholder {
+  color: var(--secondary-color);
+}
+
+.modal-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.submit-button {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.submit-button button {
+  border: none;
+  background-color: green;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  font-family: var(--primary-font);
+  color: #ffffff;
+  transition: all 0.4s linear;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.submit-button button:active {
+  transform: translateY(5px);
+}
+
+.modal-footer select {
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* error message */
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  font-family: var(--secondary-font);
+  margin: 0 auto;
+}
+
+/* delete pop up */
+.confirmation-text p {
+  font-size: 1.25rem;
+  font-family: var(--secondary-font);
+  margin-bottom: 20px;
+}
+.confirmation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.cancel-button,
+.confirm-button {
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  width: 100%;
+  font-size: 1.1rem;
+  font-family: var(--primary-font);
+  transition: all 0.4s linear;
+  box-shadow: var(--background-primary);
+  transition: all 0.4s linear;
+  cursor: pointer;
+}
+.cancel-button {
+  margin-right: 20px;
+  background-color: #dedbd2;
+}
+.confirm-button {
+  background-color: #72c07a;
+}
+.confirm-button:active,
+.cancel-button:active {
+  transform: translateY(5px);
+}
+
+@media screen and (max-width: 424px) {
+  .modal-header {
+    font-size: 1.25rem;
+  }
+  .modal-container {
+    width: 350px;
+  }
+  .title-input,
+  .description-input,
+  .task-due-date {
+    font-size: 1.1rem;
+  }
+  .title-input input,
+  .description-input textarea,
+  .task-due-date input {
+    font-size: 0.9rem;
+    /* width: 220px; */
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .modal-header {
+    font-size: 1rem;
+  }
+  .title-input,
+  .description-input,
+  .task-due-date {
+    font-size: 0.85rem;
+  }
+  .title-input input,
+  .description-input textarea,
+  .task-due-date input {
+    font-size: 0.8rem;
+    width: 100%;
+    margin-top: 5px;
+  }
+  .modal-container {
+    width: 300px;
+  }
+  .priority-input select {
+    font-size: 0.9rem;
+  }
+  .modal-container {
+    width: 300px;
+  }
+  .title-input,
+  .description-input,
+  .task-due-date {
+    flex-wrap: wrap;
+  }
+  .submit-button button {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+  .delete-confirmation {
+    width: 270px;
+  }
+  .confirmation-text p {
+    font-size: 1.1rem;
+  }
+
+  .cancel-button,
+  .confirm-button {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 283px) {
+  .modal-container {
+    width: 100%;
+  }
+  .delete-confirmation {
+    width: 220px;
+  }
+  .confirmation-text p {
+    font-size: 1rem;
+  }
+}
