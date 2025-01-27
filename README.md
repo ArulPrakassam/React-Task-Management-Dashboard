@@ -2,6 +2,8 @@
 
 A user task management dashboard which also users to add, edit, delete tasks and able to set priority and status for the tasks. And also many filtering options are available such as priority filtering, status filtering, input search filtering.
 
+Live URL: [Task Management Dashboard](https://react-task-management-dashboard.netlify.app/)
+
 ## Features
 
 - Add, Edit, Delete Tasks
