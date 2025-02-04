@@ -6,8 +6,10 @@ Live URL: [Task Management Dashboard](https://react-task-management-dashboard.ne
 
 ## Features
 
-- Add, Edit, Delete Tasks
-- Filtering by status, priority, due date and input search
+- Add, Edit, Delete Tasks.
+- Filtering by status, priority, due date and input search.
+- Using local storage to storage our data. First time we get data from data.js file and after it will be stored in local storage and if we modify (add or edit or delete ) then only local storage will affect.
+- Displaying the tasks based upon high priority.
 
 ## Tech Stack
 
@@ -16,7 +18,7 @@ Live URL: [Task Management Dashboard](https://react-task-management-dashboard.ne
 
 ## App.jsx
 
-Inside App.js we have three components Header, Dashboard and Footer. And also we have one more ToastContainer to show popup noifications.
+Inside App.js we have three components Header, Dashboard and Footer. And also we have one more ToastContainer to show popup notifications.
 
 ```js
 <main>
@@ -29,7 +31,7 @@ Inside App.js we have three components Header, Dashboard and Footer. And also we
 
 ## useContext.jsx
 
-We are using usecontext you pass props across components
+We are using usecontext to pass props across components
 
 ### main.jsx
 
@@ -43,9 +45,9 @@ We are using usecontext you pass props across components
 
 ### context.jsx
 
-In context.jsx, we are getting the values from localstorage, if localstorage has no values then we will get from the data.js filter.
+In context.jsx, we are getting the data from localstorage for first time, if localstorage has no data then we will get data from the data.js file and after we save the data in local storage also.
 
-Here we are using two states, one for showing the data to user (displayedTasks) and other for updating the user tasks when we do make a creation or edit or updation of tasks (userTasks).
+Here we are using two states, one for showing the data to user (displayedTasks) and other for updating the user tasks (userTasks) when we do a creation or edit or updation of tasks.
 
 displayedTasks will be used for filtering data and rendering in the UI screen.
 
@@ -81,6 +83,12 @@ function getLocalStorage() {
 ```
 
 ### To add and edit tasks
+
+This form handler will update the edited tasks and add new tasks.
+
+If isEditing is true and editID has id of our task then it is edit, so we will update the task in the list. If isEditing is false then we will add the task to the list.
+
+In our form handler, we are also checking that if the due date is past then we throw error.
 
 ```js
 const formHandler = (e) => {
@@ -140,7 +148,7 @@ const formHandler = (e) => {
 
 ### To delete Task
 
-When we click delete button, we will show the confirmation popup and once confirmed we will pass the id and remove the task and update the list.
+When we click delete button, we will show the confirmation popup and once confirmed we will pass the id and remove the task (delete) and update the list.
 
 ```js
 const removeItem = (id) => {
@@ -330,7 +338,7 @@ const sortByPriority = (data) => {
 };
 ```
 
-This useEffect will help to filter the tasks.
+This useEffect will help to filter the tasks and display to the user by setDisplayTasks.
 
 ```js
 useEffect(() => {
@@ -383,7 +391,7 @@ useEffect(() => {
 
 ### DeletePopup.jsx
 
-Delete pop up will give a confirmation pop up and after selecting confirm we will delete the task from the list.
+Delete pop up will give a confirmation pop up. After selecting confirm button we will delete the task from the list.
 
 ```js
 <section className="modal-content">
@@ -418,7 +426,7 @@ Delete pop up will give a confirmation pop up and after selecting confirm we wil
 
 ## TaskForm.jsx
 
-It is used to add new task and edit existing task
+It is a modal and it has the required form fields and is used to add new task and edit existing task. If some of the fields are missing during submission of form then it will show error.
 
 ```js
 <section className="modal-content">
